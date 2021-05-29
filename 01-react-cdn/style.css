@@ -13,3 +13,7 @@ body{
 .mayor{
     color: blue;
 }
+
+button{
+    margin: 0px 0.5rem;
+}
