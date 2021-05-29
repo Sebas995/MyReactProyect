@@ -5,9 +5,11 @@ const Contador = () => {
     const aumentar = () => setContador(contador + 1);
     const disminuir = () => setContador(contador - 1);
 
+
+
     return (
         <div>
-            <h1 class={contador < 0 ? "menor" : "mayor"} >Contador Ahre : {contador}</h1>
+            <h1 className={contador < 0 ? "menor" : "mayor"} >Contador Ahre : {contador}</h1>
             <hr/>
             <button onClick={aumentar}>Aumentar</button>
             <button onClick={disminuir}>Disminuir</button>
