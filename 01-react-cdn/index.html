@@ -11,15 +11,21 @@
     <!--Prod-->
     <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
     <div id="root"></div>
 
-    <script>
+    <script type="text/babel">
         var root = document.getElementById("root");
 
         ReactDOM.render(
-            React.createElement("h1", null, "Hellowda"), root
+            <div>
+                <ul>
+                    <li> Ahre </li>
+                </ul>
+            </div>
+            , root
         );
     </script>
 </body>
