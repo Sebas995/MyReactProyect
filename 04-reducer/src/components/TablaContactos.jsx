@@ -1,0 +1,32 @@
+import React from 'react';
+
+const TablaContactos = ({ contactos = [] }) => {
+    return (
+        <table className="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Numero</th>
+                    <th>Acción</th>                   
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    contactos.map((contacto) => {
+                        return(
+                            <tr key={contacto.id}>
+                                <th>{contacto.id}</th>
+                                <td>{contacto.nombre}</td>
+                                <td>{contacto.numero}</td>
+                                <td><button key={contacto.id} className="btn btn-danger">Eliminar</button></td>
+                            </tr>
+                        );
+                    })
+                }
+            </tbody>
+        </table>
+    )
+}
+
+export default TablaContactos;
