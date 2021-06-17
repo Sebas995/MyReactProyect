@@ -1,6 +1,14 @@
 import React from 'react';
 
-const TablaContactos = ({ contactos = [] }) => {
+const TablaContactos = ({ contactos = [], dispatch }) => {
+
+    const handleDelete = (id) =>{
+        dispatch({
+            type: "delete",
+            payload: id
+        });
+    };
+
     return (
         <table className="table">
             <thead>
@@ -14,12 +22,18 @@ const TablaContactos = ({ contactos = [] }) => {
             <tbody>
                 {
                     contactos.map((contacto) => {
+
+                        let id = contacto.id;
+                        let finalId = id.split("-")[0];
+
                         return(
-                            <tr key={contacto.id}>
-                                <th>{contacto.id}</th>
+                            <tr key={id}>
+                                <th>{finalId}</th>
                                 <td>{contacto.nombre}</td>
                                 <td>{contacto.numero}</td>
-                                <td><button key={contacto.id} className="btn btn-danger">Eliminar</button></td>
+                                <td>
+                                    <button key={id} onClick={() => handleDelete(id)} className="btn btn-danger">Eliminar</button>
+                                </td>
                             </tr>
                         );
                     })
